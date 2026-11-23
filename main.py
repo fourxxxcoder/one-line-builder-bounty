@@ -29,6 +29,9 @@ def main() -> None:
         written = f.read()
     if written != LINE:
         raise ValueError("written entry does not match the line")
+    # Report what shipped, so a run's output is visible without re-reading
+    # the file: the line itself plus its character count against the gate.
+    print(f"Wrote {len(LINE)} chars to /output/entry.txt: {LINE}")
 
 
 if __name__ == "__main__":
